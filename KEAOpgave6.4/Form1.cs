@@ -148,22 +148,22 @@ namespace KEAOpgave6._4
                 if (b1.Text == "" || b2.Text == "" || b3.Text == "") // if one button is blank
                     continue; // there is no reason to go through them
 
-                // if all 3 buttons are X
-                if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "X")
-                {
-                    b1.BackColor = b2.BackColor = b3.BackColor = Color.LightGreen; // changing backgroundcolor of winner buttons
-                    b1.Font = b2.Font = b3.Font = new Font ("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
-                    MessageBox.Show("You won!", "Winner!", MessageBoxButtons.OK);
-                    disableAll();
-                    break;
-                }
-
                 // if all 3 buttons are O
                 if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "O")
                 {
                     b1.BackColor = b2.BackColor = b3.BackColor = Color.Red; // changing backgroundcolor of winner buttons
                     b1.Font = b2.Font = b3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
                     MessageBox.Show("You lose!", "Loser!", MessageBoxButtons.OK);
+                    disableAll();
+                    break;
+                }
+
+                // if all 3 buttons are X
+                else if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "X")
+                {
+                    b1.BackColor = b2.BackColor = b3.BackColor = Color.LightGreen; // changing backgroundcolor of winner buttons
+                    b1.Font = b2.Font = b3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
+                    MessageBox.Show("You won!", "Winner!", MessageBoxButtons.OK);
                     disableAll();
                     break;
                 }
@@ -194,11 +194,12 @@ namespace KEAOpgave6._4
                 {
                     field = randObj.Next(9); // setting field to a random number between 1-9
 
-                } while (buttonArray[field].Enabled == false); 
+                } while (buttonArray[field].Enabled == false);
 
                 buttonArray[field].Text = "O"; // using the random number to set O on a button
                 buttonArray[field].Enabled = false; // using the random number to disable a button
             }
+            Win();
         }
     }
 }
