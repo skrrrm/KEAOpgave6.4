@@ -197,7 +197,7 @@ namespace KEAOpgave6._4
                 buttonArray[field].Text = "O"; // using the random number to set O on a button
                 buttonArray[field].Enabled = false; // using the random number to disable a button
             }
-            Win(); // import that we also check who wins after the ai sets its mark
+            Win(); // important that we also check who wins after the ai sets its mark
         }
     }
 }
