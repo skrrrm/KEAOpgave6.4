@@ -36,6 +36,8 @@ namespace KEAOpgave6._4
             {
                 buttonArray[i].Text = "";
                 buttonArray[i].Enabled = true;
+                buttonArray[i].BackColor = Color.LightGray;
+                buttonArray[i].Font = new Font("Microsoft Sans Serif", 8, FontStyle.Regular);
             }
         }
 
@@ -52,7 +54,7 @@ namespace KEAOpgave6._4
             button1.Text = "X";
             button1.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace KEAOpgave6._4
             button2.Text = "X";
             button2.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace KEAOpgave6._4
             button3.Text = "X";
             button3.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -76,7 +78,7 @@ namespace KEAOpgave6._4
             button4.Text = "X";
             button4.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace KEAOpgave6._4
             button5.Text = "X";
             button5.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -92,7 +94,7 @@ namespace KEAOpgave6._4
             button6.Text = "X";
             button6.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -100,7 +102,7 @@ namespace KEAOpgave6._4
             button7.Text = "X";
             button7.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -108,7 +110,7 @@ namespace KEAOpgave6._4
             button8.Text = "X";
             button8.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -116,11 +118,11 @@ namespace KEAOpgave6._4
             button9.Text = "X";
             button9.Enabled = false;
             Win();
-            Computer();
+            Ai();
         }
 
-        // 3-dimensional array - one spot in the array contains the 3 numbers
-        // for Win conditions in tic tac toe - numbers correlate with buttons
+        // 3-dimensional array - one spot in the array contains 3 numbers
+        // for the 8 win conditions in tic tac toe - numbers correlate with buttons
         static private int[,] winCondition = new int[,]
         {
             {0,1,2},
@@ -149,14 +151,21 @@ namespace KEAOpgave6._4
                 // if all 3 buttons are X
                 if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "X")
                 {
+                    b1.BackColor = b2.BackColor = b3.BackColor = Color.LightGreen; // changing backgroundcolor of winner buttons
+                    b1.Font = b2.Font = b3.Font = new Font ("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
                     MessageBox.Show("You won!", "Winner!", MessageBoxButtons.OK);
                     disableAll();
+                    break;
                 }
+
                 // if all 3 buttons are O
-                else if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "O")
+                if (b1.Text == b2.Text && b2.Text == b3.Text && b3.Text == "O")
                 {
+                    b1.BackColor = b2.BackColor = b3.BackColor = Color.Red; // changing backgroundcolor of winner buttons
+                    b1.Font = b2.Font = b3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
                     MessageBox.Show("You lose!", "Loser!", MessageBoxButtons.OK);
                     disableAll();
+                    break;
                 }
             }
         }
@@ -165,7 +174,7 @@ namespace KEAOpgave6._4
         Random randObj = new Random();
 
         // Method for computer to set its O on the board
-        private void Computer()
+        private void Ai()
         {
             // variables
             int field;
