@@ -153,7 +153,6 @@ namespace KEAOpgave6._4
                 {
                     b1.BackColor = b2.BackColor = b3.BackColor = Color.Red; // changing backgroundcolor of winner buttons
                     b1.Font = b2.Font = b3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
-                    MessageBox.Show("You lose!", "Loser!", MessageBoxButtons.OK);
                     disableAll();
                     break;
                 }
@@ -163,7 +162,6 @@ namespace KEAOpgave6._4
                 {
                     b1.BackColor = b2.BackColor = b3.BackColor = Color.LightGreen; // changing backgroundcolor of winner buttons
                     b1.Font = b2.Font = b3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold); // changing font of winner buttons
-                    MessageBox.Show("You won!", "Winner!", MessageBoxButtons.OK);
                     disableAll();
                     break;
                 }
