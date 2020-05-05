@@ -117,7 +117,7 @@ namespace KEAOpgave6._4
             }
         }
 
-        // Creating random object for use in Computer()
+        // Creating random object for use in Ai() method
         Random randObj = new Random();
 
         // Method for computer to set its O on the board
