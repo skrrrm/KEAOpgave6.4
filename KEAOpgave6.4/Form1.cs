@@ -27,6 +27,17 @@ namespace KEAOpgave6._4
             buttonArray[6] = button7;
             buttonArray[7] = button8;
             buttonArray[8] = button9;
+
+            // Button event handler
+            button1.Click += new EventHandler(ButtonHandler);
+            button2.Click += new EventHandler(ButtonHandler);
+            button3.Click += new EventHandler(ButtonHandler);
+            button4.Click += new EventHandler(ButtonHandler);
+            button5.Click += new EventHandler(ButtonHandler);
+            button6.Click += new EventHandler(ButtonHandler);
+            button7.Click += new EventHandler(ButtonHandler);
+            button8.Click += new EventHandler(ButtonHandler);
+            button9.Click += new EventHandler(ButtonHandler);
         }
 
         // Clears everything for a new game
@@ -49,76 +60,14 @@ namespace KEAOpgave6._4
                 buttonArray[i].Enabled = false;
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Text = "X";
-            button1.Enabled = false;
-            Win();
-            Ai();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void ButtonHandler(object sender, EventArgs e)
         {
-            button2.Text = "X";
-            button2.Enabled = false;
-            Win();
+            Button activeButton = (Button)sender;
+            activeButton.Text = "X";
+            activeButton.Enabled = false;
             Ai();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            button3.Text = "X";
-            button3.Enabled = false;
             Win();
-            Ai();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            button4.Text = "X";
-            button4.Enabled = false;
-            Win();
-            Ai();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            button5.Text = "X";
-            button5.Enabled = false;
-            Win();
-            Ai();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            button6.Text = "X";
-            button6.Enabled = false;
-            Win();
-            Ai();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            button7.Text = "X";
-            button7.Enabled = false;
-            Win();
-            Ai();
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            button8.Text = "X";
-            button8.Enabled = false;
-            Win();
-            Ai();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            button9.Text = "X";
-            button9.Enabled = false;
-            Win();
-            Ai();
         }
 
         // 3-dimensional array - one spot in the array contains 3 numbers
@@ -197,7 +146,6 @@ namespace KEAOpgave6._4
                 buttonArray[field].Text = "O"; // using the random number to set O on a button
                 buttonArray[field].Enabled = false; // using the random number to disable a button
             }
-            Win(); // important that we also check who wins after the ai sets its mark
         }
     }
 }
