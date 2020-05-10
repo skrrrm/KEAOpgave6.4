@@ -61,6 +61,7 @@ namespace KEAOpgave6._4
             }
         }
 
+        // EventHandler to handle all the buttons
         public void ButtonHandler(object sender, EventArgs e)
         {
             Button activeButton = (Button)sender;

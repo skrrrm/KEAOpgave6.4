@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +106,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEAOpgave6.4_3uhxtl23RM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEAOpgave6.4_gekPFZLL9l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEAOpgave6.4_qAKTNysPaC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KEAOpgave6.4_WlZORxsrPy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
